@@ -332,22 +332,21 @@
                   >
                 </div>
                 <!-- <div class="history-score">{entry.mood}<small>/10</small></div> -->
-                <div class="history-metrics">
+                <!-- <div class="history-metrics">
                   <span>Mood <strong>{entry.mood}/10</strong></span>
                   <span>Energy <strong>{entry.energy}/10</strong></span>
                   <span>Stress <strong>{entry.stress}/10</strong></span>
-                </div>
-                <!-- <div class="history-metrics">
+                </div> -->
+                <div class="history-metrics">
                   <span>Score</span>
                   <strong>
                     {(
-                      Number(entry.mood) +
-                      Number(entry.energy) -
-                      Number(entry.stress)
+                      (Number(entry.mood) +
+                      Number(entry.energy)) / 2 - Number(entry.stress)
                     ).toFixed(1)}
                   </strong>
-                  <small>/20</small>
-                </div> -->
+                  <small>/10</small>
+                </div>
               </article>
             {/each}
           {/if}
