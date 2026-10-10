@@ -9,12 +9,19 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "firebase deploy",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^11.1.7",
     "@astrojs/svelte": "^9.0.1",
+    "@google/genai": "^2.28.0",
     "astro": "^7.3.8",
+    "firebase": "^13.0.0",
     "svelte": "^5.57.2",
     "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.33.0"
   }
 }

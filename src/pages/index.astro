@@ -1,12 +1,8 @@
 ---
-import Header from "../components/Header.svelte";
+import Layout from '../layouts/Layout.astro';
+import Dashboard from '../components/Dashboard.svelte';
 ---
 
-<html lang="en">
-  <head>
-    <title>Happiness Lab</title>
-  </head>
-  <Header>
-  </Header>
-  <body> </body>
-</html>
+<Layout title="HappiHit">
+  <Dashboard client:load />
+</Layout>
