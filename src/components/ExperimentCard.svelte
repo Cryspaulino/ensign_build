@@ -2,6 +2,7 @@
   export let title = 'Take a mindful walk';
   export let description = 'Spend 10 minutes walking without distractions. Check in with your mood before and afterward.';
   export let icon = '☼';
+  export let category = 'personal';
 
   let completed = false;
   let beforeMood = 5;

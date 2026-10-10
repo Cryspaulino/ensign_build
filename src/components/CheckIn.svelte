@@ -4,6 +4,7 @@
   export let stress = 4;
   export let habits = [];
   export let selectedHabits = [];
+  export let user = null;
   export let onToggleHabit = () => {};
   export let onSave = () => {};
   export let saving = false;
@@ -103,9 +104,13 @@
     </div>
   </div>
 
-  <button class="primary-button" disabled={saving} onclick={onSave}>
-    {saving ? "✓ Check-in saved" : "Save today’s check-in →"}
+  <button class="primary-button" disabled={saving || !user} onclick={onSave}>
+    {#if user}
+      Save today’s check-in →
+    {:else if saving}
+      Saving...
+    {:else}
+      Log in to save your check in
+    {/if}
   </button>
-
-  <p class="privacy-note">♡ Your feelings are yours. No judgment here.</p>
 </section>

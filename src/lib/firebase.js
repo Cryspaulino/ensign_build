@@ -1,9 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import {
-  getAuth,
-  signInAnonymously
-} from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const config = {
   apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
@@ -11,11 +8,13 @@ const config = {
   projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.PUBLIC_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID
+  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(config);
 
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
 export const db = getFirestore(app);
 
 let authPromise;
