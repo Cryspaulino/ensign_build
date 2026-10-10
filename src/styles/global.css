@@ -217,6 +217,21 @@ input[type="range"] { width: 100%; accent-color: #47785a; cursor: pointer; }
   padding: 5px; font-size: 11px;
 }
 
+.history-metrics {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-size: 11px;
+  color: #81908a;
+  white-space: nowrap;
+}
+
+.history-metrics strong {
+  color: #172b26;
+  font-size: 12px;
+}
+
 .primary-button:hover { background: #194633; transform: translateY(-1px); }
 .privacy-note { text-align: center; font-size: 9px; color: #999e94; margin: 15px 0 0; }
 

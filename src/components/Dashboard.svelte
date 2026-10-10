@@ -67,7 +67,7 @@
       history = await getCheckIns();
     } catch (error) {
       console.error("Could not load check-ins:", error);
-    //   saveError = "Please log in to see or add check-ins.";
+      //   saveError = "Please log in to see or add check-ins.";
     }
   });
 
@@ -316,9 +316,7 @@
               </p>
             </div>
           {:else}
-            {#each [...filteredHistory]
-              .reverse()
-              .slice(0, showHistory ? filteredHistory.length : 4) as entry}
+            {#each [...filteredHistory].slice(0, showHistory ? filteredHistory.length : 4) as entry}
               <article class="history-row">
                 <div class="history-icon">☼</div>
                 <div class="history-info">
@@ -333,7 +331,23 @@
                       "No habits selected"}</span
                   >
                 </div>
-                <div class="history-score">{entry.mood}<small>/10</small></div>
+                <!-- <div class="history-score">{entry.mood}<small>/10</small></div> -->
+                <div class="history-metrics">
+                  <span>Mood <strong>{entry.mood}/10</strong></span>
+                  <span>Energy <strong>{entry.energy}/10</strong></span>
+                  <span>Stress <strong>{entry.stress}/10</strong></span>
+                </div>
+                <!-- <div class="history-metrics">
+                  <span>Score</span>
+                  <strong>
+                    {(
+                      Number(entry.mood) +
+                      Number(entry.energy) -
+                      Number(entry.stress)
+                    ).toFixed(1)}
+                  </strong>
+                  <small>/20</small>
+                </div> -->
               </article>
             {/each}
           {/if}
